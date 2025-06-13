@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 150px 1fr / 300px 1fr;
+    grid-template-areas: 
+        "sidebar header header header"
+        "sidebar main main main";
+}
+
+/* Header */
+
+.header {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    grid-area: header;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    gap: 10px;
+    padding: 20px;
+    grid-template-areas: 
+        "header-top header-top"
+        "header-bottom header-bottom";
+}
+
+/* Header Top */
+
+.header-top {
+    grid-area: header-top;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px repeat(3, minmax(min-content, 80px));
+    align-items: center;
+    padding: 0 20px;
+    padding-right: 50px;
+}
+
+/* Header Top - Left Search Panel */
+
+.search-icon {
+
+}
+
+input {
+    background-color: rgb(237, 237, 237);
+    border: none;
+    border-radius: 100px;
+    padding: 0.3rem 0.6rem;
+    width: min(1000px, 100%);
+}
+
+/* Header Top - Right Panel */
+
+.header-right-panel-user-avatar {
+    border-radius: 50%;
+    width: 3rem;
+}
+
+/* Header Bottom */
+
+.header-bottom {
+    grid-area: header-bottom;
+    display: grid;
+    grid-template-columns: 100px 1fr 100px 100px 100px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Header Bottom - Left Greetings Panel */
+
+.header-left-panel {
+    grid-area: header-left-panel;
+}
+
+.header-left-panel-user-avatar {
+    border-radius: 50%;
+    width: 4rem;
+}
+
+/* Header Bottom - Right Buttons */
+
+.header-right-buttons {
+ grid-area: header-right-buttons;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: rgb(70, 162, 253);
+    color: white;
+    grid-area: sidebar;
+    display: grid;
+    grid-template: repeat(12, min-content) / 50px 1fr;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.sidebar-space {
+    grid-column: 1 / 3;
+    padding: 1.5rem;
+}
+
+/* Main */
+
+.main {
+    background-color: rgb(232, 232, 232);
+    grid-area: main;
+    display: grid;
+    grid-template: 30px min-content 30px min-content / 2fr 1fr;
+    gap: 20px;
+    padding: 30px 20px;
+
+}
+
+.head-projects {
+
+}
+
+.projects {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: min-content;
+    grid-gap: 20px;
+}
+
+.project-card {
+    background-color: white;
+    box-shadow: 2px 2px 2px lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template: repeat(2, min-content) 20px;
+}
+
+.project-name {
+    grid-row: 1 / 2;
+}
+
+.projects-paragraph {
+    grid-row: 2 / 3;
+}
+
+.project-icons {
+    grid-row 3 / 4;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: end;
+    padding-top: 20px;
+}
+
+.head-announcemets {
+
+}
+
+.announcemets {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: white;
+    display: grid;
+    grid-template: repeat(3, min-content) / 1fr;
+    border-radius: 10px;
+    padding: 20px;
+    grid-gap: 20px;
+}
+
+.announcemets-card {
+    background-color: white;
+}
+
+.head-trendings {
+
+}
+
+.trending {
+
+}
+
+.trending-card {
+    background-color: white;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template: repeat(4, min-content) / 1fr;
+    border-radius: 10px;
+    padding: 20px;
+    grid-gap: 20px;
+}
+
+.account-card {
+    display: grid;
+    grid-template: repeat(2, min-content) / 50px 1fr;
+}
+
+.trend-img {
+    grid-row: 1 / 3;
+    align-self: center;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.account-card h2 {
+    font-weight: normal;
+    grid-column: 2 / 3;
+    padding-left: 10px;
+    align-self: end;
+}
+
+.account-card p {
+    font-size: 0.8rem;
+    font-weight: normal;
+    grid-column: 2 / 3;
+    padding-left: 10px;
+    color: grey;
+}
+
+.icons-big {
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: white;
+    justify-self: center;
+}
+
+.icons {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icons-white {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+    justify-self: center;
+}
+
+.projects-paragraph {
+    font-size: 1rem;
+}
+
+.announcemets-paragraph {
+    font-size: 0.8rem;
+}
+
+button {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 0;
+    border-radius: 100px;
+    background-color: rgb(70, 162, 253);
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.button-div {
+    padding: 10px;
+}
